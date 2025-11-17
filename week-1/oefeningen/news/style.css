@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.news-layout {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "main main main aside"
+    "footer footer footer footer";
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* alternatief (korter) */
+.news-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-columns: 3fr 1fr; /* hier bepalen dat eerste 3fr breed is */
+  gap: 1rem;
+}
+
+header {
+  grid-area: header;
+  padding: 2rem;
+  background: #eee;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+  padding: 2rem;
+  background: red;
+}
