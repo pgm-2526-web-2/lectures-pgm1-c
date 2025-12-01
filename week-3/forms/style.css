@@ -1,0 +1,73 @@
+.pseudo {
+  &::before {
+    content: "Voor de titel";
+  }
+  &::after {
+    content: "Achter de titel";
+  }
+}
+
+ul {
+  list-style-type: none;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  li::before {
+    display: inline-block;
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: orange;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+}
+
+.image {
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: "";
+    background: orange;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::after {
+    content: "";
+    background: rgba(80, 180, 38, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.input:not(.input--variant) {
+  border: 1px solid orange;
+}
+
+label:has(+ .input:not(.input--variant)) {
+  color: red;
+  font-weight: bold;
+}
+
+.input:valid {
+  background: green;
+}
